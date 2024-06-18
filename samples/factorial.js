@@ -1,11 +1,9 @@
-function factorial(n) {
-    if (n < 0) return 'Error: Negative numbers do not have factorials';
-    if (n === 0 || n === 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
+function fact(n) {
+    if (n <= 1n) {
+        return 1n;
     }
-    return result;
+    return n * fact(n - 1n);
 }
 
-console.log(factorial(5)); // Output: 120
+const n = BigInt(prompt("This program prints the factorial of a number.\nPlease enter a number:"));
+console.log(`${n}! = ${fact(n)}`);
