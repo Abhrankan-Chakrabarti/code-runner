@@ -54,6 +54,7 @@ button:hover {
 input,
 select {
     max-width: 100%;
+    word-wrap: break-word;
 }
 pre {
     background-color: #fff;
