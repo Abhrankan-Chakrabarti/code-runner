@@ -51,6 +51,10 @@ select {
 button:hover {
     background-color: #218838; /* Darker Green */
 }
+input,
+select {
+    width: 100%;
+}
 pre {
     background-color: #fff;
     padding: 10px;

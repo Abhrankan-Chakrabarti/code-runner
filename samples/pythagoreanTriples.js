@@ -1,24 +1,14 @@
-function* generateAlmostIsoscelesPythagoreanTriples() {
-    let x = 7, y = 5;
-
-    while (true) {
-        const a = (x - 1) / 2;
-        const b = a + 1;
-        const c = y;
-
+function* aipt(n) {
+    let x = 1n, y = 1n, a, b, c;
+    while (n--) {
+        [x, y] = [3n * x + 4n * y, 2n * x + 3n * y];
+        [a, b, c] = [(x - 1n) / 2n, (x + 1n) / 2n, y];
         yield [a, b, c];
-
-        // Update x and y for the next iteration
-        [x, y] = [3 * x + 4 * y, 2 * x + 3 * y];
     }
 }
 
-const generator = generateAlmostIsoscelesPythagoreanTriples();
-
-// Print the first 5 triples
-let count = 0;
-for (const triple of generator) {
-    console.log(triple);
-    count++;
-    if (count === 5) break;
+const n = parseInt(prompt("This program prints the 1st n almost isosceles Pythagorean triples.\nEnter n:"));
+let i = 0;
+for (let x of aipt(n)) {
+    console.log(`${i++}: (${x[0]}, ${x[1]}, ${x[2]})`);
 }

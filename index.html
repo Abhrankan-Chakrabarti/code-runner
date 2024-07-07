@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Runner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="css/css2.css" rel="stylesheet">
     <link rel="stylesheet" href="css/toggletheme.css" />
     <link rel="stylesheet" href="css/coderunner.css" />
 </head>
@@ -17,17 +18,50 @@
         <option value="fibonacci">Fibonacci Sequence</option>
         <option value="factorial">Factorial</option>
         <option value="pythagoreanTriples">Almost Isosceles Pythagorean Triples</option>
+        <option value="primeChecker">Prime Number Checker</option>
     </select>
-    <button onclick="toggleTheme();toggleEditorTheme();toggleLogoTheme()" class="toggle-theme-btn"><i class="fas fa-moon"></i></button>
+    <button onclick="toggleTheme();toggleEditorTheme();toggleLogoTheme()" class="toggle-theme-btn">
+      <svg width="30" height="30" id="light-icon">
+        <circle cx="15" cy="15" r="6" fill="currentColor" />
+
+        <line
+          id="ray"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          x1="15"
+          y1="1"
+          x2="15"
+          y2="4"
+        ></line>
+
+        <use href="#ray" transform="rotate(45 15 15)" />
+        <use href="#ray" transform="rotate(90 15 15)" />
+        <use href="#ray" transform="rotate(135 15 15)" />
+        <use href="#ray" transform="rotate(180 15 15)" />
+        <use href="#ray" transform="rotate(225 15 15)" />
+        <use href="#ray" transform="rotate(270 15 15)" />
+        <use href="#ray" transform="rotate(315 15 15)" />
+      </svg>
+      <svg width="30" height="30" id="dark-icon">
+        <path
+          fill="currentColor"
+          d="
+          M 23, 5
+          A 12 12 0 1 0 23, 25
+          A 12 12 0 0 1 23, 5"
+        />
+      </svg>
+    </button>
     <button onclick="save('editor.getValue()', 'text/javascript', 'code.js')">Save Code</button>
     <button onclick="save('document.getElementById(\'output\').textContent', 'text/plain', 'output.txt')">Save Output</button>
 
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
-    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/codemirror.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/javascript.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/base16-light.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/base16-dark.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/codemirror.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/base16-light.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/base16-dark.min.css"></link>
 
     <textarea id="codeInput" name="codeInput">console.log('Hello, world!');</textarea>
 
