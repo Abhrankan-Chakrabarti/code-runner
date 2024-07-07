@@ -55,6 +55,7 @@ input,
 select {
     max-width: 100%;
     white-space: normal;
+    /* For Firefox: */
     text-overflow: ellipsis;
 }
 pre {
