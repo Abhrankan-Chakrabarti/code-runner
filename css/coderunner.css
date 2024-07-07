@@ -55,6 +55,7 @@ input,
 select {
     max-width: 100%;
     white-space: normal;
+    text-overflow: ellipsis;
 }
 pre {
     background-color: #fff;
