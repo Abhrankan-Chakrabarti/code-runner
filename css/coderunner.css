@@ -55,6 +55,7 @@ input,
 select {
     max-width: 100%;
     word-wrap: break-word;
+    word-break: break-all;
 }
 pre {
     background-color: #fff;
