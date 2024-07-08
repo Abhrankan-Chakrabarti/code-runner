@@ -88,3 +88,9 @@ function toggleLogoTheme() {
         document.getElementById('logo').src="logo.png";
     }
 }
+
+window.addEventListener('beforeunload', function (e) {
+    const confirmationMessage = 'Are you sure you want to leave this page? Any unsaved changes will be lost.';
+    e.returnValue = confirmationMessage; // Standard for most browsers
+    return confirmationMessage; // Required for some older browsers
+});
