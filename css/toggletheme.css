@@ -27,4 +27,5 @@
 /* Light theme button style */
 .dark-theme .toggle-theme-btn {
     background-color: #555; /* Darker button background in dark mode */
+    color: white;
 }
