@@ -34,7 +34,7 @@ function runCode() {
     try {
         eval(code);
     } catch (e) {
-        outputElement.textContent = 'Error: ' + e.message;
+        outputElement.textContent = `${e.name}: ${e.message}`;
     } finally {
         // Restore the original console.log
         console.log = originalConsoleLog;
