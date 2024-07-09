@@ -11,6 +11,7 @@ async function loadSample() {
         } catch (error) {
             console.error('Error fetching the sample code:', error);
             editor.setValue('Error loading sample code.');
+            document.getElementById('output').innerHTML = `<span class="error">${error.name}: ${error.message}</span>`;
         }
     }
 }
@@ -34,7 +35,7 @@ function runCode() {
     try {
         eval(code);
     } catch (e) {
-        outputElement.textContent = `${e.name}: ${e.message}`;
+        outputElement.innerHTML = `<span class="error">${e.name}: ${e.message}</span>`;
     } finally {
         // Restore the original console.log
         console.log = originalConsoleLog;
